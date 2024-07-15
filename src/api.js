@@ -26,6 +26,6 @@ export const fetchUserData = async () => {
 };
 
 export const refreshToken = async () => {
-  await api.post('/refresh-token');
-  console.log("refresh token received")
+  const res = await api.post('/refresh');
+  console.log("refresh token received", res)
 };
