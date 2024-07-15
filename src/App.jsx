@@ -24,7 +24,7 @@ const App = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await login();
+		const data = await login();
     //   const data = await fetchUserData();
     //   setUserData(data);
     } catch (error) {
