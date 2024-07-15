@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://newpro-five-chi.vercel.app',
+  baseURL: 'https://newpro-uid1.onrender.com',
   withCredentials: true, // Important to include cookies in requests
 });
 
@@ -24,6 +24,7 @@ export const fetchUserData = async () => {
   }
 };
 
-const refreshToken = async () => {
+export const refreshToken = async () => {
   await api.post('/refresh-token');
+  console.log("refresh token received")
 };

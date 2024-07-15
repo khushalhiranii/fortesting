@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchUserData, login } from './api';
+import { fetchUserData, login, refreshToken } from './api';
 
 const App = () => {
   const [userData, setUserData] = useState(null);
@@ -68,6 +68,11 @@ const App = () => {
             <div>
               <button type="submit" disabled={isLoading}>
                 {isLoading ? 'Logging in...' : 'Login'}
+              </button>
+            </div>
+			<div>
+              <button onClick={refreshToken}>
+            refresh
               </button>
             </div>
           </form>
