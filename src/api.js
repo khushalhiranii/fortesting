@@ -30,6 +30,7 @@ export const refreshToken = async () => {
     const res = await api.post('/refresh');
   console.log("refresh token received", res)
   } catch (error) {
+    console.log("Hello");
     console.error(error)
   }
   
