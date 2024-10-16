@@ -10,9 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // Function to render the app in the specified container
 const renderReactApp = (containerId) => {
   const container = document.getElementById(containerId);
-
   if (container) {
-    const root = ReactDOM.createRoot(container);  // Create root inside function
     root.render(
       <React.StrictMode>
         <App />
@@ -23,7 +21,10 @@ const renderReactApp = (containerId) => {
   }
 };
 
+// Expose the render function globally
 window.renderReactApp = renderReactApp;
+
+// Optional: Unmount function to clean up
 window.unmountReactApp = (containerId) => {
   const container = document.getElementById(containerId);
   if (container) {
@@ -32,9 +33,9 @@ window.unmountReactApp = (containerId) => {
 };
 
 // You can call renderReactApp immediately for local testing
-// if (document.getElementById('root')) {
-//   renderReactApp('root'); // Default container ID for local testing
-// }
+if (document.getElementById('root')) {
+  renderReactApp('root'); // Default container ID for local testing
+}
 
 // Measure performance if needed
 reportWebVitals();
