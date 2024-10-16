@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Function to render the app in the specified container
-const renderReactApp = (containerId) => {
+export const renderReactApp = (containerId) => {
   const container = document.getElementById(containerId);
   if (container) {
     root.render(
@@ -25,12 +25,12 @@ const renderReactApp = (containerId) => {
 window.renderReactApp = renderReactApp;
 
 // Optional: Unmount function to clean up
-window.unmountReactApp = (containerId) => {
-  const container = document.getElementById(containerId);
-  if (container) {
-    ReactDOM.unmountComponentAtNode(container);
-  }
-};
+// window.unmountReactApp = (containerId) => {
+//   const container = document.getElementById(containerId);
+//   if (container) {
+//     ReactDOM.unmountComponentAtNode(container);
+//   }
+// };
 
 // You can call renderReactApp immediately for local testing
 if (document.getElementById('root')) {
