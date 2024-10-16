@@ -6,12 +6,12 @@ import Dashboard from './pages/Dashboard';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/">
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/" element={<Login />} /> {/* Redirect to Login by default */}
+        <Route path="/" element={<Login />} /> {/* Default route */}
       </Routes>
     </Router>
   );
