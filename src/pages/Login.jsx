@@ -2,15 +2,15 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const navigate = useNavigate();
-    const handleSubmit =()=>{
-        navigate('/dashboard')
-    }
+    // const navigate = useNavigate();
+    // const handleSubmit =()=>{
+    //     navigate('/dashboard')
+    // }
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-80">
         <h2 className="text-2xl font-semibold mb-6 text-center">Login</h2>
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="mb-4">
             <label className="block text-sm font-medium mb-1">Email</label>
             <input
