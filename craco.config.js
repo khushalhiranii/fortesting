@@ -1,21 +1,13 @@
-const { ModuleFederationPlugin } = require("webpack").container;
-
 module.exports = {
   webpack: {
     configure: (webpackConfig) => {
-      webpackConfig.plugins.push(
-        new ModuleFederationPlugin({
-          name: "reactApp", // Name of your microfrontend
-          filename: "remoteEntry.js", // The exposed entry file
-          exposes: {
-            "./App": "./src/App", // Exposing the App component
-          },
-          shared: {
-            react: { singleton: true, eager: true, requiredVersion: "^18.0.0" },
-            "react-dom": { singleton: true, eager: true, requiredVersion: "^18.0.0" },
-          },
-        })
-      );
+      webpackConfig.output = {
+        ...webpackConfig.output,
+        filename: 'lms-widget.js',  // Bundle into a single JS file
+        library: 'LMSWidget',       // Expose it as a global variable
+        libraryTarget: 'umd',       // Use UMD for compatibility
+        globalObject: 'this',       // Ensure compatibility across environments
+      };
       return webpackConfig;
     },
   },
