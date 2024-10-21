@@ -1,33 +1,18 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom/client';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
+// // src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-// const renderReactApp = (containerId) => {
-//   const container = document.getElementById(containerId);
-//   if (container) {
-//     const root = ReactDOM.createRoot(container);
-//     root.render(
-//       <React.StrictMode>
-//         <App />
-//       </React.StrictMode>
-//     );
-//   } else {
-//     console.error(`No container found with ID: ${containerId}`);
-//   }
-// };
+// Self-executing function to load the widget
+(function () {
+    const widgetDiv = document.createElement('div');
+    widgetDiv.id = 'lms-widget';
+    document.body.appendChild(widgetDiv);
 
-// window.renderReactApp = renderReactApp;
-// window.unmountReactApp = (containerId) => {
-//   const container = document.getElementById(containerId);
-//   if (container) {
-//     ReactDOM.unmountComponentAtNode(container);
-//   }
-// };
-
-// // Local testing
-// if (document.getElementById('root')) {
-//   renderReactApp('root');
-// }
-
-// reportWebVitals();
+    ReactDOM.render(
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>,
+        document.getElementById('lms-widget')
+    );
+})();
